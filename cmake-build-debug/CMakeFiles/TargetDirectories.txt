@@ -1,0 +1,3 @@
+/Users/sebastianamann/Library/Mobile Documents/com~apple~CloudDocs/Projects/CLion/dbibackend/cmake-build-debug/CMakeFiles/dbibackend.dir
+/Users/sebastianamann/Library/Mobile Documents/com~apple~CloudDocs/Projects/CLion/dbibackend/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sebastianamann/Library/Mobile Documents/com~apple~CloudDocs/Projects/CLion/dbibackend/cmake-build-debug/CMakeFiles/rebuild_cache.dir
