@@ -63,6 +63,13 @@ build CMakeFiles/dbibackend.dir/UsbContext.cpp.o: CXX_COMPILER__dbibackend_unsca
   OBJECT_DIR = CMakeFiles/dbibackend.dir
   OBJECT_FILE_DIR = CMakeFiles/dbibackend.dir
 
+build CMakeFiles/dbibackend.dir/Command.cpp.o: CXX_COMPILER__dbibackend_unscanned_Debug /Users/sebastianamann/Library/Mobile$ Documents/com~apple~CloudDocs/Projects/CLion/dbibackend/Command.cpp || cmake_object_order_depends_target_dbibackend
+  DEP_FILE = CMakeFiles/dbibackend.dir/Command.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  INCLUDES = -I/opt/homebrew/Cellar/libusb/1.0.27/include/libusb-1.0
+  OBJECT_DIR = CMakeFiles/dbibackend.dir
+  OBJECT_FILE_DIR = CMakeFiles/dbibackend.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target dbibackend
@@ -71,7 +78,7 @@ build CMakeFiles/dbibackend.dir/UsbContext.cpp.o: CXX_COMPILER__dbibackend_unsca
 #############################################
 # Link the executable dbibackend
 
-build dbibackend: CXX_EXECUTABLE_LINKER__dbibackend_Debug CMakeFiles/dbibackend.dir/main.cpp.o CMakeFiles/dbibackend.dir/UsbContext.cpp.o
+build dbibackend: CXX_EXECUTABLE_LINKER__dbibackend_Debug CMakeFiles/dbibackend.dir/main.cpp.o CMakeFiles/dbibackend.dir/UsbContext.cpp.o CMakeFiles/dbibackend.dir/Command.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/Cellar/libusb/1.0.27/lib  -lusb-1.0
   LINK_PATH = -L/opt/homebrew/Cellar/libusb/1.0.27/lib

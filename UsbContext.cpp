@@ -74,7 +74,7 @@ UsbContext::~UsbContext() {
     libusb_exit(nullptr);
 }
 
-int UsbContext::read(unsigned char *data, int length, unsigned int timeout) {
+int UsbContext::read(unsigned char *data, int length, unsigned int timeout) const {
     int transferred;
     int result = libusb_bulk_transfer(dev_handle, _in.bEndpointAddress, data, length, &transferred, timeout);
     if (result < 0) {
@@ -83,9 +83,9 @@ int UsbContext::read(unsigned char *data, int length, unsigned int timeout) {
     return transferred;
 }
 
-void UsbContext::write(const unsigned char *data, int length, unsigned int timeout) {
+void UsbContext::write(const unsigned char *data, int length, unsigned int timeout) const {
     int transferred;
-    int result = libusb_bulk_transfer(dev_handle, _out.bEndpointAddress, (unsigned char *)data, length, &transferred, timeout);
+    int result = libusb_bulk_transfer(dev_handle, _out.bEndpointAddress, const_cast<unsigned char *>(data), length, &transferred, timeout);
     if (result < 0) {
         throw std::runtime_error("Write failed");
     }

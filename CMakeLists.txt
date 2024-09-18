@@ -14,6 +14,8 @@ add_executable(dbibackend main.cpp
         UsbContext.cpp
         UsbContext.h
         CommandId.h
-        CommandType.h)
+        CommandType.h
+        Command.cpp
+        Command.h)
 
 target_link_libraries(dbibackend ${LIBUSB_LIBRARIES})
