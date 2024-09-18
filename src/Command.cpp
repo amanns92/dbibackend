@@ -8,9 +8,10 @@
 #include <thread>      // for sleep_for
 #include <chrono>      // for seconds
 #include <filesystem>
-#include "Command.h"
-#include "CommandId.h"
-#include "CommandType.h"
+#include "../header/UsbContext.h"
+#include "../header/Command.h"
+#include "../enums/CommandId.h"
+#include "../enums/CommandType.h"
 
 // Exit command processing
 void Command::process_exit_command(UsbContext& context) {

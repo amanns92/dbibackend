@@ -11,11 +11,11 @@ include_directories(${LIBUSB_INCLUDE_DIRS})
 link_directories(${LIBUSB_LIBRARY_DIRS})
 
 add_executable(dbibackend main.cpp
-        UsbContext.cpp
-        UsbContext.h
-        CommandId.h
-        CommandType.h
-        Command.cpp
-        Command.h)
+        src/UsbContext.cpp
+        header/UsbContext.h
+        enums/CommandId.h
+        enums/CommandType.h
+        src/Command.cpp
+        header/Command.h)
 
 target_link_libraries(dbibackend ${LIBUSB_LIBRARIES})
