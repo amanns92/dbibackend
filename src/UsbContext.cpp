@@ -6,7 +6,7 @@
 #include <iostream>
 #include <stdexcept>
 
-UsbContext::UsbContext(uint16_t vid, uint16_t pid) {
+UsbContext::UsbContext(const uint16_t vid, const uint16_t pid) {
     libusb_context *ctx = nullptr;
     int result = libusb_init(&ctx);
     if (result < 0) {
@@ -74,19 +74,17 @@ UsbContext::~UsbContext() {
     libusb_exit(nullptr);
 }
 
-int UsbContext::read(unsigned char *data, int length, unsigned int timeout) const {
+int UsbContext::read(unsigned char *data, const int length, const unsigned int timeout) const {
     int transferred;
-    int result = libusb_bulk_transfer(dev_handle, _in.bEndpointAddress, data, length, &transferred, timeout);
-    if (result < 0) {
+    if (libusb_bulk_transfer(dev_handle, _in.bEndpointAddress, data, length, &transferred, timeout) < 0) {
         throw std::runtime_error("Read failed");
     }
     return transferred;
 }
 
-void UsbContext::write(const unsigned char *data, int length, unsigned int timeout) const {
+void UsbContext::write(const unsigned char *data, const int length, const unsigned int timeout) const {
     int transferred;
-    int result = libusb_bulk_transfer(dev_handle, _out.bEndpointAddress, const_cast<unsigned char *>(data), length, &transferred, timeout);
-    if (result < 0) {
+    if (libusb_bulk_transfer(dev_handle, _out.bEndpointAddress, const_cast<unsigned char *>(data), length, &transferred, timeout) < 0) {
         throw std::runtime_error("Write failed");
     }
 }
